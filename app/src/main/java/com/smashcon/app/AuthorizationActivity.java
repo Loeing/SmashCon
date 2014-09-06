@@ -2,6 +2,7 @@ package com.smashcon.app;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,7 +35,6 @@ public class AuthorizationActivity extends Activity {
 
         getActionBar().addTab(signupTab);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

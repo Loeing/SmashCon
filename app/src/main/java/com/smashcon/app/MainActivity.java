@@ -35,10 +35,14 @@ public class MainActivity extends Activity {
         super.onStart();
 
         if(ParseUser.getCurrentUser() == null) {
-            Intent startAuthorizationIntent = new Intent(this, AuthorizationActivity.class);
-
-            startActivity(startAuthorizationIntent);
+            gotoAuthPage();
         }
+    }
+
+    private void gotoAuthPage() {
+        Intent startAuthorizationIntent = new Intent(this, AuthorizationActivity.class);
+
+        startActivity(startAuthorizationIntent);
     }
 
     @Override
@@ -47,6 +51,14 @@ public class MainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
+        switch (id) {
+            case R.id.logout_menu_item:
+                ParseUser.logOut();
+                gotoAuthPage();
+
+                break;
+        }
 
         return super.onOptionsItemSelected(item);
     }

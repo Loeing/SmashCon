@@ -1,5 +1,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.smashcon.app.MainActivity" >
-
+    <item android:id="@+id/logout_menu_item"
+        android:title="Logout"
+        android:showAsAction="always"
+        android:icon="@drawable/logout"></item>
 </menu>
