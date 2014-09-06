@@ -4,5 +4,9 @@
     <string name="app_name">SmashCon</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_authorization">Account</string>
+    <string name="hello_blank_fragment">Hello login fragment</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 
 </resources>
