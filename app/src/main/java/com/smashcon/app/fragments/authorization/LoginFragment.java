@@ -12,10 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseFacebookUtils;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 import com.smashcon.app.MainActivity;
@@ -29,6 +32,7 @@ public class LoginFragment extends Fragment {
 
     private EditText username, password;
     private Button login;
+    private ImageButton fbLogin;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -43,8 +47,8 @@ public class LoginFragment extends Fragment {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
         username = (EditText) getView().findViewById(R.id.username_field);
         password = (EditText) getView().findViewById(R.id.password_field);
@@ -56,10 +60,34 @@ public class LoginFragment extends Fragment {
                 login();
             }
         });
+        fbLogin = (ImageButton) getActivity().findViewById(R.id.fb_login_button);
+        fbLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loginWithFb();
+            }
+        });
+    }
+
+    private void loginWithFb() {
+        ParseFacebookUtils.logIn(getActivity(), new LogInCallback() {
+            @Override
+            public void done(ParseUser parseUser, ParseException e) {
+                if(parseUser == null) {
+                    Toast.makeText(getActivity(),
+                            "There is no account associated with this Facebook.",
+                            Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent gotoMainIntent = new Intent(getActivity(), MainActivity.class);
+                    startActivity(gotoMainIntent);
+                }
+            }
+        });
     }
 
     /**
-     * Register the user
+     * Login the user
      */
     public void login() {
 

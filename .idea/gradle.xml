@@ -7,8 +7,9 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="C:\Users\Ari\AndroidStudioProjects\SmashCon" />
-            <option value="C:\Users\Ari\AndroidStudioProjects\SmashCon\app" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/facebook" />
           </set>
         </option>
       </GradleProjectSettings>

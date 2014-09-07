@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:src="@drawable/ic_launcher"
+        android:id="@+id/photo_holder"
+        android:layout_width="70dip"
+        android:layout_height="70dip"
+        android:layout_alignParentLeft="true"/>
+    <TextView
+        android:text="Yellow!"
+        android:id="@+id/buddy_name"
+        android:layout_toRightOf="@id/photo_holder"
+        android:layout_alignParentTop="true"
+        android:textSize="12pt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="Hi!"
+        android:id="@+id/buddy_connections"
+        android:layout_toRightOf="@id/photo_holder"
+        android:layout_below="@id/buddy_name"
+        android:textSize="10pt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

@@ -13,10 +13,8 @@
             android:layout_gravity="center_horizontal"
             android:src="@drawable/ic_launcher"
             android:layout_marginTop="25dip"
-            android:minWidth="150dip"
-            android:minHeight="150dip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="150dip"
+            android:layout_height="150dip" />
 
         <TextView
             android:text="Sign in"
@@ -42,5 +40,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Login"/>
+
+        <ImageButton
+            android:id="@+id/fb_login_button"
+            android:layout_marginTop="20dip"
+            android:src="@drawable/facebook_logo"
+            android:layout_width="match_parent"
+            android:background="@null"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </ScrollView>
